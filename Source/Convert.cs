@@ -56,8 +56,8 @@ namespace SignalPath
 
                 if (i + 3 > bytes.Length)
                 {
-                    // Use the remaining 2 low bits of the first byte as the 2 high bits in the next sextet. Confusing!
-                    builder.Append(GetBase64Char((one & 0x03) << 4));
+                    // Use the remaining 2 low bits of the second byte as the 2 high bits in the next sextet. Confusing!
+                    builder.Append(GetBase64Char((two & 0x03) << 4));
                     builder.Append("=");
                     break;
                 }
